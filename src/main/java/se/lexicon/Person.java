@@ -52,6 +52,7 @@ public class Person {
         if(!loanedBooks.contains(book)) System.out.println("You have not loaned this book");
         else {
             book.setAvailable(true);
+            book.setLender(null);
             loanedBooks.remove(book);
             System.out.println("You returned " + book.getTitle());
         }
@@ -65,6 +66,11 @@ public class Person {
             bookString = bookString.concat("Book title: " + book.getTitle() + ". Book author: " + book.getAuthor() + ".\n");
         }
         return bookString;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + getFirstName() + " " + getLastName() + ". ID: " + getPersonId();
     }
 
 

@@ -49,4 +49,12 @@ public class Book {
     setAuthor(author);
     setTitle(title);
     }
+
+    public Person showPerson(){
+
+        if(isAvailable()) throw new IllegalArgumentException("Book has not been lended"); // if book is available return null instead
+        else return getLender();
+    }
+
+
 }
